@@ -20,7 +20,7 @@ def bot():
     # print(choice)
     # print(usr_msg)
     if choice == False and ("hello" in usr_msg.lower() or "hi" in usr_msg.lower()):
-        msg.body("Hello there! Still I am in developing stage so still I can run code without input only. Press 1 to c/c++ code\nPress 2 to python code\nPress 3 to java code\nPress 4 to GoLang code\nPress 5 to c# code\nPress 6 to nodejs code")
+        msg.body("Hello there! Still I am in developing stage so still I can run code without input only.\nPress 1 to c/c++ code\nPress 2 to python code\nPress 3 to java code\nPress 4 to GoLang code\nPress 5 to c# code\nPress 6 to nodejs code")
 
     elif choice==False and usr_msg>='1' and usr_msg<='6':
         option = int(usr_msg)-1
