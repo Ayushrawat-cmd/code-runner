@@ -11,25 +11,24 @@ headers = {
 choice = False
 languages = ["cpp", "py", "java", "go","cs", "js"]
 option = 0
+code = ""
 @app.route("/bot", methods=["POST"])
 def bot():
-    global choice, option
+    global choice, option,code 
     usr_msg = request.values.get("Body",'')
     bot_response = MessagingResponse()
     msg = bot_response.message()
     # print(choice)
     # print(usr_msg)
-    if choice == False and ("hello" in usr_msg.lower() or "hi" in usr_msg.lower()):
-        msg.body("Hello there! Still I am in developing stage so still I can run code without input only. Press 1 to c/c++ code\nPress 2 to python code\nPress 3 to java code\nPress 4 to GoLang code\nPress 5 to c# code\nPress 6 to nodejs code")
-
-    elif choice==False and usr_msg>='1' and usr_msg<='6':
-        option = int(usr_msg)-1
-        msg.body(f"I am waiting to get {languages[option]} code.")
+    if choice == False:
+        code = usr_msg
+        msg.body("Hello there! Still I am in developing stage so still I can run code without input only.\nPress 1 to compile in c/c++ code\nPress 2 to to compile in python code\nPress 3 to to compile in java code\nPress 4 to to compile in GoLang code\nPress 5 to to compile in c# code\nPress 6 to to compile in nodejs code")
         choice = True
-
-    elif choice == True:
+        
+    elif choice == True and usr_msg>='1' and usr_msg<='6':
+        option = int(usr_msg)-1
         payload = json.dumps({
-            "code": usr_msg,
+            "code": code,
             "language": languages[option],
             "input": ""
         })
