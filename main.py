@@ -18,14 +18,7 @@ def bot():
     usr_msg = request.values.get("Body",'')
     bot_response = MessagingResponse()
     msg = bot_response.message()
-    # print(choice)
-    # print(usr_msg)
-    if choice == False:
-        code = usr_msg
-        msg.body("Hello there! Still I am in developing stage so still I can run code without input only.\nPress 1 to compile in c/c++ code\nPress 2 to to compile in python code\nPress 3 to to compile in java code\nPress 4 to to compile in GoLang code\nPress 5 to to compile in c# code\nPress 6 to to compile in nodejs code")
-        choice = True
-        
-    elif choice == True and usr_msg>='1' and usr_msg<='6':
+    if choice == True and usr_msg>='1' and usr_msg<='6':
         option = int(usr_msg)-1
         payload = json.dumps({
             "code": code,
@@ -38,6 +31,13 @@ def bot():
         elif response.json()["success"] == True:
             msg.body(response.json()["output"])
         choice =False
+
+    elif choice == False:
+        code = usr_msg
+        msg.body("Hello there! Still I am in developing stage so still I can run code without input only.\nPress 1 to compile in c/c++ code\nPress 2 to compile in python code\nPress 3 to compile in java code\nPress 4 to compile in GoLang code\nPress 5 to compile in c# code\nPress 6 to compile in nodejs code")
+        choice = True
+        
+    
     return str(bot_response)
 
 if __name__ == "__main__":
