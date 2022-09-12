@@ -27,7 +27,7 @@ def bot():
             input_run = False
         elif usr_msg>='1' and usr_msg<='6':
             option = int(usr_msg)-1
-            print(code)
+            # print(code)
             payload = json.dumps({
                 "code": code,
                 "language": languages[option],
@@ -47,7 +47,7 @@ def bot():
         code = usr_msg
         run = True
         input_run = True
-        print(code)
+        # print(code)
     
     else:
         msg.body("Please send code again.")
