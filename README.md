@@ -33,7 +33,7 @@ packaging and dependency management. You will need to follow the installation in
 # Screenshots!
 
 <div float="left">
-  <img src="https://user-images.githubusercontent.com/79196598/190916585-1a7a5eba-dc27-4973-b9a4-a22b45af74bd.jpg" width="250">)
+  <img src="https://user-images.githubusercontent.com/79196598/190916585-1a7a5eba-dc27-4973-b9a4-a22b45af74bd.jpg" width="250">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://user-images.githubusercontent.com/79196598/190918807-0d88462d-a6ab-42f9-beb8-27606d2b9c7e.jpg" width="250">
 </div>
